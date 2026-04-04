@@ -1,0 +1,11 @@
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/serde_untagged-08e81daaa855ea1d.d: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/any.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/error.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/int.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/map.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/seed.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/seq.rs
+
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/libserde_untagged-08e81daaa855ea1d.rmeta: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/any.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/error.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/int.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/map.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/seed.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/seq.rs
+
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/lib.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/any.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/error.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/int.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/map.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/seed.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-untagged-0.1.9/src/seq.rs:

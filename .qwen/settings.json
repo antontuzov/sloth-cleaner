@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir *)",
+      "Bash(npm install)",
+      "Bash(npx *)",
+      "Bash(npm run *)",
+      "Bash(timeout *)",
+      "Bash(true)",
+      "Bash(gtimeout *)",
+      "Bash(sleep *)",
+      "Bash(curl *)",
+      "Bash(kill *)",
+      "Bash(rustc *)",
+      "Bash(cargo *)",
+      "Bash(cat *)",
+      "Bash(python3 *)",
+      "Bash(cd *)",
+      "Bash(echo *)",
+      "Bash(~/.cargo/bin/cargo-tauri *)",
+      "Bash(osascript *)",
+      "Bash(pgrep *)",
+      "Bash(rm *)",
+      "Bash(pkill *)",
+      "Bash(grep *)"
+    ]
+  },
+  "$version": 3
+}

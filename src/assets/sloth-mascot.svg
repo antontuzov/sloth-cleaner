@@ -1,0 +1,49 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sloth body hanging from branch -->
+  <rect x="20" y="30" width="160" height="8" fill="#8B5A3A" rx="4"/>
+  
+  <!-- Branch leaves -->
+  <ellipse cx="40" cy="28" rx="12" ry="6" fill="#10B981" transform="rotate(-20 40 28)"/>
+  <ellipse cx="160" cy="28" rx="12" ry="6" fill="#10B981" transform="rotate(20 160 28)"/>
+  
+  <!-- Sloth body -->
+  <ellipse cx="100" cy="120" rx="50" ry="40" fill="#D97757"/>
+  <ellipse cx="100" cy="120" rx="42" ry="34" fill="#E8976F"/>
+  
+  <!-- Arms hanging from branch -->
+  <path d="M 70 95 Q 65 60 70 35" stroke="#D97757" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M 130 95 Q 135 60 130 35" stroke="#D97757" stroke-width="12" fill="none" stroke-linecap="round"/>
+  
+  <!-- Claws -->
+  <path d="M 65 35 L 62 25 M 70 35 L 70 25 M 75 35 L 78 25" stroke="#8B5A3A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 125 35 L 122 25 M 130 35 L 130 25 M 135 35 L 138 25" stroke="#8B5A3A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="90" r="30" fill="#D97757"/>
+  <circle cx="100" cy="90" r="24" fill="#E8976F"/>
+  
+  <!-- Eyes -->
+  <circle cx="90" cy="85" r="5" fill="#1F2937"/>
+  <circle cx="110" cy="85" r="5" fill="#1F2937"/>
+  <circle cx="91" cy="83" r="2" fill="white"/>
+  <circle cx="111" cy="83" r="2" fill="white"/>
+  
+  <!-- Eye patches -->
+  <ellipse cx="90" cy="85" rx="8" ry="6" fill="#8B5A3A" opacity="0.4"/>
+  <ellipse cx="110" cy="85" rx="8" ry="6" fill="#8B5A3A" opacity="0.4"/>
+  
+  <!-- Nose -->
+  <ellipse cx="100" cy="93" rx="4" ry="3" fill="#1F2937"/>
+  
+  <!-- Smile -->
+  <path d="M 93 98 Q 100 103 107 98" stroke="#1F2937" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Legs -->
+  <path d="M 75 145 Q 70 160 75 175" stroke="#D97757" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M 125 145 Q 130 160 125 175" stroke="#D97757" stroke-width="10" fill="none" stroke-linecap="round"/>
+  
+  <!-- Sparkles -->
+  <circle cx="150" cy="100" r="3" fill="#F59E0B"/>
+  <circle cx="160" cy="115" r="2" fill="#F59E0B"/>
+  <circle cx="145" cy="130" r="2.5" fill="#F59E0B"/>
+</svg>

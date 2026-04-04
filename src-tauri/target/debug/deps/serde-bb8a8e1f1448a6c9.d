@@ -1,0 +1,14 @@
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/serde-bb8a8e1f1448a6c9.d: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/build/serde-7bc29a85147aef4b/out/private.rs
+
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/libserde-bb8a8e1f1448a6c9.rlib: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/build/serde-7bc29a85147aef4b/out/private.rs
+
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/libserde-bb8a8e1f1448a6c9.rmeta: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/build/serde-7bc29a85147aef4b/out/private.rs
+
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/build/serde-7bc29a85147aef4b/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/build/serde-7bc29a85147aef4b/out

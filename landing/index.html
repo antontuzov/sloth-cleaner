@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlothCleaner - Clean Smart. Go Slow.</title>
+  <meta name="description" content="AI-powered system cleaner for macOS and Windows. Safe, fast, and privacy-first.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="../src/assets/sloth-logo.svg" alt="SlothCleaner" width="40" height="40">
+        <span>SlothCleaner</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#comparison">Compare</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Clean Smart.<br>Go Slow.</h1>
+          <p class="subtitle">AI-powered system cleaning that learns your habits and keeps your Mac/PC running smoothly. 100% offline. 100% safe.</p>
+          
+          <div class="download-buttons">
+            <a href="#" class="btn btn-primary btn-large">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <div class="btn-text">
+                <span class="btn-label">Download for</span>
+                <span class="btn-os">macOS</span>
+              </div>
+              <span class="btn-meta">DMG • 15MB • v0.1.0</span>
+            </a>
+            
+            <a href="#" class="btn btn-secondary btn-large">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 5.548l7.066-.965v6.817H3V5.548zm0 12.904l7.066.965v-6.817H3v5.852zm8.066-6.817h9.328l-2.394 3.362-2.134-2.83-2.133 2.83-2.667-3.362zm0-.887L13.733 7.38l2.134 2.83 2.133-2.83 2.394 3.362H11.066z"/>
+              </svg>
+              <div class="btn-text">
+                <span class="btn-label">Download for</span>
+                <span class="btn-os">Windows</span>
+              </div>
+              <span class="btn-meta">EXE • 18MB • v0.1.0</span>
+            </a>
+          </div>
+          
+          <p class="system-req">macOS 10.15+ / Windows 10+ • Intel & Apple Silicon</p>
+        </div>
+        
+        <div class="hero-image">
+          <img src="../src/assets/sloth-mascot.svg" alt="Friendly sloth mascot" class="sloth-mascot">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Why SlothCleaner?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Smart AI Learning</h3>
+          <p>Learns what you want to keep and what to delete. Gets smarter with every cleanup.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>100% Safe</h3>
+          <p>Rollback protection, dry-run preview, and multi-layer safety checks. Never lose important files.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Rust-powered engine uses less than 100MB RAM. Perfect for older Macs and PCs.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy First</h3>
+          <p>All processing happens locally. No cloud, no telemetry, no data collection.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Detailed Analytics</h3>
+          <p>Track space savings over time. See exactly what's taking up your disk space.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Intelligent Recommendations</h3>
+          <p>AI suggests safe cleanups tailored to your usage patterns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-icon">🔍</div>
+          <h3>Scan</h3>
+          <p>Deep scan your system in seconds. Finds cache, logs, duplicates, and junk files.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-icon">👀</div>
+          <h3>Review</h3>
+          <p>AI shows you what's safe to remove. Preview everything before deleting.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-icon">✨</div>
+          <h3>Clean</h3>
+          <p>One-click cleanup with instant rollback. Free up gigabytes safely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="comparison" class="comparison">
+    <div class="container">
+      <h2 class="section-title">Compare Cleaners</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="highlight">SlothCleaner</th>
+            <th>CleanMyMac</th>
+            <th>CCleaner</th>
+            <th>BleachBit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price</td>
+            <td class="highlight"><strong>Free (Open Core)</strong></td>
+            <td>$34.95/year</td>
+            <td>Free / $29.95</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Local AI</td>
+            <td class="highlight">✅ Yes</td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+          </tr>
+          <tr>
+            <td>Rollback Protection</td>
+            <td class="highlight">✅ Yes</td>
+            <td>✅ Yes</td>
+            <td>⚠️ Limited</td>
+            <td>❌ No</td>
+          </tr>
+          <tr>
+            <td>Cross-Platform</td>
+            <td class="highlight">✅ macOS + Windows</td>
+            <td>❌ macOS only</td>
+            <td>✅ Yes</td>
+            <td>❌ Win/Linux only</td>
+          </tr>
+          <tr>
+            <td>RAM Usage</td>
+            <td class="highlight"><strong>&lt;100MB</strong></td>
+            <td>~300MB</td>
+            <td>~200MB</td>
+            <td>~150MB</td>
+          </tr>
+          <tr>
+            <td>Open Source</td>
+            <td class="highlight">✅ Core is MIT</td>
+            <td>❌ Closed</td>
+            <td>❌ Closed</td>
+            <td>✅ GPL</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td class="highlight">✅ 100% Offline</td>
+            <td>⚠️ Cloud features</td>
+            <td>⚠️ Telemetry</td>
+            <td>✅ Offline</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Loved by Users</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Finally, a cleaner that doesn't break my system! The rollback feature saved me twice already."</p>
+          <div class="testimonial-author">
+            <div class="avatar">SK</div>
+            <div>
+              <strong>Sarah K.</strong>
+              <span>MacBook Air M1</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p>"The AI actually learns what I want to keep. After a week, it suggests perfect cleanups every time."</p>
+          <div class="testimonial-author">
+            <div class="avatar">MR</div>
+            <div>
+              <strong>Mike R.</strong>
+              <span>Windows 11 Developer</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p>"Freed up 25GB on my old MacBook. It's like having a new computer. And it's FREE!"</p>
+          <div class="testimonial-author">
+            <div class="avatar">EL</div>
+            <div>
+              <strong>Emma L.</strong>
+              <span>MacBook Pro 2016</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is it safe to use?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! SlothCleaner uses multiple safety layers: system file protection, active process detection, dry-run preview, and instant rollback. We've never lost a user's important file.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does it work offline?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! 100% offline. The AI runs locally on your machine using less than 2GB RAM. No internet connection required, no data sent to the cloud.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How much RAM does it use?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Under 100MB when idle, and around 200-300MB during scanning. Perfect for older Macs and low-spec PCs.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is it really open source?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! The core scanner, safety engine, and UI are MIT licensed on GitHub. Advanced AI features use a Business Source License (free for personal use).</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I rollback a cleanup?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Every cleanup creates a snapshot. You can restore any cleanup instantly from the History tab, even days later.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Free Up Space?</h2>
+      <p>Join thousands of users who trust SlothCleaner</p>
+      <div class="download-buttons">
+        <a href="#" class="btn btn-primary">Download for macOS</a>
+        <a href="#" class="btn btn-secondary">Download for Windows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../src/assets/sloth-logo.svg" alt="SlothCleaner" width="32" height="32">
+          <span>SlothCleaner</span>
+        </div>
+        
+        <div class="footer-links">
+          <a href="https://github.com/yourusername/sloth-cleaner" target="_blank">GitHub</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="mailto:hello@slothcleaner.com">Contact</a>
+        </div>
+      
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 SlothCleaner. Open source under MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

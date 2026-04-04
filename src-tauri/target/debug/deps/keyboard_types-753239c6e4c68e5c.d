@@ -1,0 +1,11 @@
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/keyboard_types-753239c6e4c68e5c.d: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/code.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/key.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/location.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/modifiers.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/shortcuts.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/webdriver.rs
+
+/Users/admin/Documents/Forbest/sloth-cleaner/src-tauri/target/debug/deps/libkeyboard_types-753239c6e4c68e5c.rmeta: /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/code.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/key.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/location.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/modifiers.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/shortcuts.rs /Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/webdriver.rs
+
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/code.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/key.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/location.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/modifiers.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/shortcuts.rs:
+/Users/admin/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/webdriver.rs:
