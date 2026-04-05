@@ -10,4 +10,4 @@ cargo:PERMISSION_FILES_PATH=/Users/admin/Documents/Forbest/sloth-cleaner/src-tau
 cargo:rerun-if-changed=capabilities
 cargo:rerun-if-env-changed=REMOVE_UNUSED_COMMANDS
 cargo:rustc-env=TAURI_ENV_TARGET_TRIPLE=x86_64-apple-darwin
-cargo:rustc-env=MACOSX_DEPLOYMENT_TARGET=10.13
+cargo:rustc-env=MACOSX_DEPLOYMENT_TARGET=10.15

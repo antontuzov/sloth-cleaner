@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Progress } from '@/components/ui/Progress'
+import { Tooltip } from '@/components/ui/Tooltip'
 import { formatBytes } from '@/utils/formatBytes'
 import { getSystemInfo } from '@/hooks/useScanner'
 import type { SystemInfo } from '@/types'
@@ -55,11 +56,15 @@ export const Dashboard = () => {
           <h1 className="text-2xl font-bold text-text">Welcome to SlothCleaner</h1>
           <p className="text-text-secondary mt-1">Clean smart, go slow. Let's optimize your system.</p>
         </div>
-        <Link to={ROUTES.scan}>
-          <Button size="lg" leftIcon={<Zap className="w-5 h-5" />}>
-            Quick Scan
-          </Button>
-        </Link>
+        <Tooltip content="Quickly scan cache directories (⌘+S)" side="left">
+          <span>
+            <Link to={ROUTES.scan}>
+              <Button size="lg" leftIcon={<Zap className="w-5 h-5" />} aria-label="Quick scan - start scanning now">
+                Quick Scan
+              </Button>
+            </Link>
+          </span>
+        </Tooltip>
       </div>
 
       {error && (

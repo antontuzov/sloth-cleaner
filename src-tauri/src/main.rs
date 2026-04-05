@@ -1,52 +1,16 @@
-// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 mod scanner;
 mod cleaner;
 mod ai;
 mod database;
 mod os;
 mod utils;
+mod types;
 mod commands;
 
-use serde::{Deserialize, Serialize};
-use std::path::PathBuf;
-
-/// Application state shared across commands
-#[derive(Clone)]
-pub struct AppState {
-    pub db_path: PathBuf,
-    pub data_dir: PathBuf,
-    pub snapshot_dir: PathBuf,
-}
-
-impl AppState {
-    pub fn new(data_dir: PathBuf) -> Self {
-        let db_path = data_dir.join("sloth-cleaner.db");
-        let snapshot_dir = data_dir.join("snapshots");
-        
-        Self {
-            db_path,
-            data_dir,
-            snapshot_dir,
-        }
-    }
-}
-
-/// System information structure
-#[derive(Debug, Serialize, Deserialize)]
-pub struct SystemInfo {
-    pub os_name: String,
-    pub os_version: String,
-    pub hostname: String,
-    pub cpu_brand: String,
-    pub cpu_cores: u32,
-    pub total_memory_gb: f64,
-    pub available_memory_gb: f64,
-    pub disk_total_gb: f64,
-    pub disk_available_gb: f64,
-}
+use types::AppState;
+use tauri::Manager;
 
 fn main() {
-    // Setup logger
     env_logger::init();
 
     tauri::Builder::default()
@@ -67,13 +31,19 @@ fn main() {
             commands::reset_learning_data,
         ])
         .setup(|app| {
-            // Initialize database
-            let app_handle = app.handle().clone();
-            database::init(&app_handle)?;
-            
-            // Initialize AI model (lazy load)
-            ai::init_model(&app_handle)?;
-            
+            let data_dir = app.path()
+                .app_data_dir()
+                .unwrap_or_else(|_| std::env::temp_dir().join("sloth-cleaner"));
+
+            std::fs::create_dir_all(&data_dir).ok();
+
+            let app_state = AppState::new(data_dir);
+
+            database::init(app.handle())?;
+            ai::init_model(app.handle())?;
+
+            app.manage(app_state);
+
             log::info!("SlothCleaner initialized successfully");
             Ok(())
         })

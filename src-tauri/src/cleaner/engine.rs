@@ -1,6 +1,6 @@
 use std::path::Path;
 use trash;
-use log;
+
 
 /// Clean files safely using the trash system
 pub struct CleanEngine {

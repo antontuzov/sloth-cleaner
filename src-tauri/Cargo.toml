@@ -37,6 +37,7 @@ uuid = { version = "1.6", features = ["v4"] }
 log = "0.4"
 env_logger = "0.10"
 directories = "5.0"
+dirs = "5.0"
 rayon = "1.8"
 parking_lot = "0.12"
 
@@ -47,6 +48,13 @@ anyhow = "1.0"
 # Compression (for snapshots)
 flate2 = "1.0"
 tar = "0.4"
+
+# Hashing for duplicate detection
+md-5 = "0.10"
+hex = "0.4"
+
+# Desktop notifications
+notify-rust = "4.10"
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }

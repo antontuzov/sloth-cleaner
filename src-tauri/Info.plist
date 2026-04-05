@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSFullDiskAccessAuthorizationRequests</key>
+    <true/>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>SlothCleaner needs Full Disk Access to scan all files on your system for safe cleanup.</string>
+    <key>NSSystemAdministrationUsageDescription</key>
+    <string>SlothCleaner requires system-level access to safely clean system caches and logs.</string>
+</dict>
+</plist>

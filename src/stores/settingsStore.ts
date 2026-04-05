@@ -12,7 +12,7 @@ interface SettingsState {
   enableLearning: boolean
   aggressiveness: number
   protectedPaths: string[]
-  
+
   setTheme: (theme: Theme) => void
   setLanguage: (language: string) => void
   setAutoStart: (autoStart: boolean) => void
@@ -24,9 +24,10 @@ interface SettingsState {
   addProtectedPath: (path: string) => void
   removeProtectedPath: (path: string) => void
   resetLearning: () => void
+  applyTheme: (theme: Theme) => void
 }
 
-export const useSettingsStore = create<SettingsState>((set) => ({
+export const useSettingsStore = create<SettingsState>((set, get) => ({
   theme: 'system',
   language: 'en',
   autoStart: false,
@@ -36,8 +37,11 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   enableLearning: true,
   aggressiveness: 3,
   protectedPaths: [],
-  
-  setTheme: (theme) => set({ theme }),
+
+  setTheme: (theme) => {
+    set({ theme })
+    get().applyTheme(theme)
+  },
   setLanguage: (language) => set({ language }),
   setAutoStart: (autoStart) => set({ autoStart }),
   setEnableRollback: (enable) => set({ enableRollback: enable }),
@@ -48,4 +52,24 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   addProtectedPath: (path) => set((state) => ({ protectedPaths: [...state.protectedPaths, path] })),
   removeProtectedPath: (path) => set((state) => ({ protectedPaths: state.protectedPaths.filter((p) => p !== path) })),
   resetLearning: () => set({}),
+  applyTheme: (theme) => {
+    const root = document.documentElement
+    if (theme === 'dark') {
+      root.classList.add('dark')
+    } else if (theme === 'light') {
+      root.classList.remove('dark')
+    } else {
+      // System preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (prefersDark) {
+        root.classList.add('dark')
+      } else {
+        root.classList.remove('dark')
+      }
+    }
+  },
 }))
+
+// Apply theme on store creation
+const initial = useSettingsStore.getState()
+initial.applyTheme(initial.theme)

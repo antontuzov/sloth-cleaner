@@ -25,10 +25,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' http://localhost:1420",
-      "capabilities": [
-        "default"
-      ]
+      "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' http://localhost:1420"
     }
   },
   "bundle": {
@@ -45,6 +42,14 @@
     "shortDescription": "AI-powered system cleaner",
     "longDescription": "SlothCleaner is an intelligent system cleaner that uses local AI to safely optimize disk space while learning your preferences.",
     "copyright": "Copyright © 2026 SlothCleaner Team",
-    "publisher": "SlothCleaner"
+    "publisher": "SlothCleaner",
+    "macOS": {
+      "frameworks": [],
+      "minimumSystemVersion": "10.15",
+      "signingIdentity": null,
+      "providerShortName": null,
+      "entitlements": null,
+      "infoPlist": "./Info.plist"
+    }
   }
 }

@@ -1,80 +1,85 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Progress } from '@/components/ui/Progress'
-import { formatBytes, formatDuration } from '@/utils/formatBytes'
-import { Play, Pause, Square } from 'lucide-react'
+import { Tooltip } from '@/components/ui/Tooltip'
+import { formatDuration } from '@/utils/formatBytes'
+import { Play, Pause, Square, Info } from 'lucide-react'
+import { startScan, getScanProgress } from '@/hooks/useScanner'
+import { toastInfo, toastSuccess, toastError } from '@/components/common/Toast'
 
 const CATEGORIES = [
-  { name: 'Browser Cache', icon: '🌐', color: 'text-blue-500' },
-  { name: 'System Cache', icon: '⚙️', color: 'text-gray-500' },
-  { name: 'Application Cache', icon: '📦', color: 'text-purple-500' },
-  { name: 'Logs', icon: '📝', color: 'text-yellow-500' },
-  { name: 'Temporary Files', icon: '🗑️', color: 'text-red-500' },
-  { name: 'Downloads', icon: '📥', color: 'text-green-500' },
-  { name: 'Thumbnails', icon: '🖼️', color: 'text-pink-500' },
-  { name: 'Development Cache', icon: '💻', color: 'text-indigo-500' },
+  { name: 'Browser Cache', icon: '🌐', color: 'text-blue-500', desc: 'Cached web pages and assets from browsers' },
+  { name: 'System Cache', icon: '⚙️', color: 'text-gray-500', desc: 'Operating system temporary files' },
+  { name: 'Application Cache', icon: '📦', color: 'text-purple-500', desc: 'App-specific caches and temp data' },
+  { name: 'Logs', icon: '📝', color: 'text-yellow-500', desc: 'System and application log files' },
+  { name: 'Temporary Files', icon: '🗑️', color: 'text-red-500', desc: 'System temp files (.tmp, .bak, .swp)' },
+  { name: 'Downloads', icon: '📥', color: 'text-green-500', desc: 'Files in your Downloads folder' },
+  { name: 'Thumbnails', icon: '🖼️', color: 'text-pink-500', desc: 'Cached image thumbnails' },
+  { name: 'Development Cache', icon: '💻', color: 'text-indigo-500', desc: 'Build artifacts and package caches' },
 ]
 
-type CategoryWithStats = typeof CATEGORIES[number] & { size: number; count: number }
-
 export const Scan = () => {
+  const [scanId, setScanId] = useState<string | null>(null)
   const [isScanning, setIsScanning] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const [progress, setProgress] = useState(0)
   const [filesScanned, setFilesScanned] = useState(0)
   const [elapsed, setElapsed] = useState(0)
-  const [categories, setCategories] = useState<CategoryWithStats[]>([])
-  
-  const handleStartScan = () => {
-    setIsScanning(true)
-    setIsPaused(false)
-    
-    // Simulate scanning progress
-    let currentProgress = 0
-    let currentFiles = 0
-    const startTime = Date.now()
-    
-    const interval = setInterval(() => {
-      if (!isPaused) {
-        currentProgress += Math.random() * 5
-        currentFiles += Math.floor(Math.random() * 1000)
-        
-        if (currentProgress >= 100) {
-          currentProgress = 100
-          clearInterval(interval)
+
+  // Poll scan progress
+  useEffect(() => {
+    if (!scanId || !isScanning) return
+
+    const interval = setInterval(async () => {
+      if (isPaused) return
+
+      try {
+        const p = await getScanProgress(scanId)
+        setProgress(Math.round(p.progressPercent))
+        setFilesScanned(p.filesScanned)
+        setElapsed(p.elapsedMs)
+
+        if (p.isComplete) {
           setIsScanning(false)
-          
-          // Set simulated categories
-          setCategories(CATEGORIES.map(cat => ({
-            ...cat,
-            size: Math.random() * 2 * 1024 * 1024 * 1024,
-            count: Math.floor(Math.random() * 10000),
-          })))
+          toastSuccess('Scan Complete', `Found ${p.filesScanned.toLocaleString()} files`)
         }
-        
-        setProgress(currentProgress)
-        setFilesScanned(currentFiles)
-        setElapsed(Date.now() - startTime)
+      } catch (err) {
+        console.error('Failed to get progress:', err)
       }
-    }, 200)
-  }
-  
-  const handlePause = () => {
-    setIsPaused(!isPaused)
-  }
-  
-  const handleStop = () => {
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [scanId, isScanning, isPaused])
+
+  const handleStartScan = useCallback(async () => {
+    try {
+      const id = await startScan()
+      setScanId(id)
+      setIsScanning(true)
+      setIsPaused(false)
+      setProgress(0)
+      setFilesScanned(0)
+      setElapsed(0)
+      toastInfo('Scanning Started', 'Analyzing your system...')
+    } catch (err) {
+      toastError('Scan Failed', String(err))
+    }
+  }, [])
+
+  const handlePause = useCallback(() => {
+    setIsPaused((prev) => !prev)
+  }, [])
+
+  const handleStop = useCallback(() => {
     setIsScanning(false)
     setIsPaused(false)
+    setScanId(null)
     setProgress(0)
     setFilesScanned(0)
     setElapsed(0)
-    setCategories([])
-  }
-  
-  const totalSize = categories.reduce((sum, cat) => sum + cat.size, 0)
-  
+  }, [])
+
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
@@ -84,22 +89,34 @@ export const Scan = () => {
         </div>
         <div className="flex gap-2">
           {!isScanning ? (
-            <Button onClick={handleStartScan} leftIcon={<Play className="w-5 h-5" />}>
-              Start Scan
-            </Button>
+            <Tooltip content="Start scanning your cache directories" side="left">
+              <span>
+                <Button onClick={handleStartScan} leftIcon={<Play className="w-5 h-5" />} aria-label="Start scan">
+                  Start Scan
+                </Button>
+              </span>
+            </Tooltip>
           ) : (
             <>
-              <Button variant="secondary" onClick={handlePause} leftIcon={isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}>
-                {isPaused ? 'Resume' : 'Pause'}
-              </Button>
-              <Button variant="danger" onClick={handleStop} leftIcon={<Square className="w-5 h-5" />}>
-                Stop
-              </Button>
+              <Tooltip content={isPaused ? 'Resume scanning' : 'Pause scanning'} side="left">
+                <span>
+                  <Button variant="secondary" onClick={handlePause} leftIcon={isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />} aria-label={isPaused ? 'Resume scan' : 'Pause scan'}>
+                    {isPaused ? 'Resume' : 'Pause'}
+                  </Button>
+                </span>
+              </Tooltip>
+              <Tooltip content="Stop the current scan" side="left">
+                <span>
+                  <Button variant="danger" onClick={handleStop} leftIcon={<Square className="w-5 h-5" />} aria-label="Stop scan">
+                    Stop
+                  </Button>
+                </span>
+              </Tooltip>
             </>
           )}
         </div>
       </div>
-      
+
       {/* Progress */}
       {isScanning && (
         <Card>
@@ -112,32 +129,37 @@ export const Scan = () => {
           </div>
         </Card>
       )}
-      
+
       {/* Categories */}
-      {categories.length > 0 && (
-        <Card title="Scan Results" subtitle={`${formatBytes(totalSize)} can be freed`}>
+      {filesScanned > 0 && (
+        <Card title="Scan Results" subtitle={`${filesScanned.toLocaleString()} files found so far`}>
           <div className="space-y-3">
-            {categories.map((cat) => (
+            {CATEGORIES.map((cat) => (
               <div key={cat.name} className="flex items-center justify-between p-3 rounded-lg bg-background">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">{cat.icon}</span>
+                  <span className="text-2xl" role="img" aria-hidden="true">{cat.icon}</span>
                   <div>
                     <p className="font-medium">{cat.name}</p>
-                    <p className="text-sm text-text-secondary">{cat.count.toLocaleString()} files</p>
+                    <p className="text-sm text-text-secondary">{cat.desc}</p>
                   </div>
                 </div>
-                <span className="font-semibold text-primary">{formatBytes(cat.size)}</span>
+                <Tooltip content={cat.desc}>
+                  <button className="p-1 rounded hover:bg-border transition-colors" aria-label={`Info about ${cat.name}`}>
+                    <Info className="w-4 h-4 text-text-secondary" />
+                  </button>
+                </Tooltip>
+                <span className="text-sm text-text-secondary">Scanning...</span>
               </div>
             ))}
           </div>
         </Card>
       )}
-      
+
       {/* Empty state */}
-      {!isScanning && categories.length === 0 && (
+      {!isScanning && filesScanned === 0 && (
         <Card>
           <div className="text-center py-12">
-            <div className="text-6xl mb-4">🔍</div>
+            <div className="text-6xl mb-4" role="img" aria-label="Magnifying glass">🔍</div>
             <h3 className="text-lg font-semibold mb-2">Ready to Scan</h3>
             <p className="text-text-secondary">Click "Start Scan" to analyze your system</p>
           </div>

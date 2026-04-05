@@ -2,11 +2,12 @@ pub mod model;
 pub mod trainer;
 pub mod recommender;
 
-use serde::{Deserialize, Serialize};
+pub use model::PreferenceModel;
+pub use trainer::Trainer;
+pub use recommender::RecommendationEngine;
 
 /// Initialize the AI model (lazy loading)
 pub fn init_model(_app_handle: &tauri::AppHandle) -> Result<(), String> {
-    // Model is loaded lazily when first needed
-    log::info!("AI model initialization requested (lazy load)");
+    log::info!("AI model initialization ready (lazy load)");
     Ok(())
 }
